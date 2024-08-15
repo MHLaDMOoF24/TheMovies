@@ -10,8 +10,8 @@ _Preferably do this while listening to Black Eyed Peas' "Let's Get It Started"._
 5) Select 'Open Git Bash here' and type in the following commands...
 6) Clone the remote repo to local:\
      git clone LINK
-7) Access the project folder (replace GettingReal if the folder is called something else):\
-     cd GettingReal
+7) Access the project folder:\
+     cd FOLDER_NAME
 
 ### Create your branch and access it
 _In the following section, always replace BRANCH_NAME with the name you want for your own branch._
