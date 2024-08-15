@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    internal class IRepo
+    internal interface IRepo
     {
+        void Create();
+        //void Read();
+        //void Update();
+        void Delete();
     }
 }

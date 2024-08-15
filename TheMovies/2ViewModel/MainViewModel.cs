@@ -8,5 +8,6 @@ namespace TheMovies._2ViewModel
 {
     internal class MainViewModel
     {
+        //public MovieRepository() movieRepo = new MovieRepository();
     }
 }

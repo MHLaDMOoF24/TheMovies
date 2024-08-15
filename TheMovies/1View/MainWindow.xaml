@@ -1,12 +1,64 @@
-﻿<Window x:Class="TheMovies.MainWindow"
+﻿<Window x:Class="TheMovies.1View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TheMovies"
+        xmlns:local="clr-namespace:TheMovies._1View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="700"
+        Width="1300">
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Background="#282D33"
+                BorderBrush="#3A4149"
+                BorderThickness="6"
+                CornerRadius="8,8,0,8" />
+
+        <TextBlock x:Name="MainPage"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap"
+                   Text="The Movies"
+                   VerticalAlignment="Top"
+                   Width="504"
+                   Height="120"
+                   Background="#282D33"
+                   FontSize="100"
+                   Foreground="#6AB93A"
+                   FontFamily="Times New Roman"
+                   Margin="0,62,0,0" />
+
+        <TextBlock HorizontalAlignment="Center"
+                   Margin="0,187,0,0"
+                   TextWrapping="Wrap"
+                   Text="Velkommen Movie Jens Peter i folkemunde"
+                   VerticalAlignment="Top"
+                   Background="#282D33"
+                   FontSize="30"
+                   Foreground="#FFFFFF"
+                   FontFamily="Times New Roman" />
+
+        <Button Content="Opret Film"
+                Margin="570,280,570,351"
+                BorderThickness="0"
+                Background="LightBlue"
+                BorderBrush="Transparent"
+                RenderTransformOrigin="0.5,0.67"
+                HorizontalContentAlignment="Center"
+                Padding="-4,1,1,1"
+                Width="160"
+                Height="70" />
+
 
     </Grid>
 </Window>

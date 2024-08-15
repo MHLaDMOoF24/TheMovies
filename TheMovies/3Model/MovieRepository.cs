@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    internal class MovieRepository
+    public class MovieRepository : IRepo
     {
+        private List<Movie> movieRepo = new List<Movie>();
+
+
+        public void Create()
+        {
+            movieRepo.Add(new Movie());
+        }
+        //public void Read(){}
+        //public void Update(){}
+        public void Delete()
+        {
+            movieRepo.RemoveAt(0);
+        }
     }
 }

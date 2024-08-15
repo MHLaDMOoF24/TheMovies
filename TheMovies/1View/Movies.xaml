@@ -26,11 +26,10 @@
                 Margin="200,347,500,27"
                 Grid.Row="1" />
 
-        <DataGrid ItemsSource="{Binding Movies}"
+        <DataGrid ItemsSource="{Binding TheMovies}"
                   AutoGenerateColumns="False"
                   Grid.Row="1"
-                  Margin="400,0,0,0"
-                  SelectionChanged="DataGrid_SelectionChanged">
+                  Margin="400,0,0,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Title"
                                     Binding="{Binding Title}" />
