@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.IO;
+using TheMovies._3Model;
 
 namespace TheMovies._2ViewModel
 {
@@ -20,6 +21,7 @@ namespace TheMovies._2ViewModel
             fileName = string.Empty;
         }
 
+        // Currently specific to MainViewModel
         public void SaveMovies(ObservableCollection<MovieViewModel> movies)
         {
             using (StreamWriter sw = new StreamWriter(Path.Combine(filePath, fileName), false))
@@ -38,11 +40,12 @@ namespace TheMovies._2ViewModel
             }
         }
 
-        public ObservableCollection<MovieViewModel> LoadMovies()
+        // Currently specific to MovieRepository
+        public List<Movie> LoadMovies()
         {
             if (File.Exists(Path.Combine(filePath, fileName)))
             {
-                ObservableCollection<MovieViewModel> movies = new ObservableCollection<MovieViewModel>();
+                List<Movie> movies = new List<Movie>();
                 using (StreamReader sr = new StreamReader(Path.Combine(filePath, fileName)))
                 {
                     while (!sr.EndOfStream) 

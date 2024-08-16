@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TheMovies._2ViewModel;
 
 namespace TheMovies._1View
 {
@@ -19,20 +20,29 @@ namespace TheMovies._1View
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        MainViewModel mainVM;
+
+        MoviesWindow moviesWindow;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            mainVM = new MainViewModel();
         }
         private void btnMovies_Click(object sender, RoutedEventArgs e)
         {
-            // Instantiate the CreateDiscount window
-            Movies movies = new Movies();
+            moviesWindow = new MoviesWindow(mainVM);
+            moviesWindow.Show();
+            //// Instantiate the CreateDiscount window
+            //Movies movies = new Movies();
 
-            // Shows the desired window
-            movies.Show();
+            //// Shows the desired window
+            //movies.Show();
 
-            // Closes the current window (MainWindow)
-            this.Close();
+            //// Closes the current window (MainWindow)
+            //this.Close();
         }
     }
 }

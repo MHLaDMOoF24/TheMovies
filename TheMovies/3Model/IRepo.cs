@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    internal interface IRepo
+    internal interface IRepo<T>
     {
-        void Create();
+        void Create(T obj);
         //void Read();
         //void Update();
-        void Delete();
+        void Delete(int pos);
     }
 }

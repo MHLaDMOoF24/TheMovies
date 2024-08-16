@@ -6,25 +6,38 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    internal class Movie
+    public class Movie
     {
         private string _title;
+        private TimeSpan _duration;
+        private string _genre;
+
         public string Title
         {
             get { return _title; }
             set { _title = value; }
         }
-        private TimeOnly _duration;
-        public TimeOnly Duration
+        public TimeSpan Duration
         {
             get { return _duration; }
             set { _duration = value; }
         }
-        private string _genre;
         public string Genre
         {
             get { return _genre; }
             set { _genre = value; }
+        }
+
+        public Movie(string title, string duration, string genre)
+        {
+            Title = title;
+            Duration = TimeSpan.Parse(duration);
+            Genre = genre;
+        }
+
+        public override string ToString()
+        {
+            return $"{Title},{Duration.ToString()},{Genre}";
         }
     }
 }

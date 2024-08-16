@@ -1,25 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using TheMovies._2ViewModel;
 
 namespace TheMovies._3Model
 {
-    public class MovieRepository : IRepo
+    public class MovieRepository : IRepo<Movie>
     {
-        private List<Movie> movieRepo = new List<Movie>();
+        private Datahandler datahandler = new Datahandler();
 
+        public List<Movie> movieRepo = new List<Movie>();
 
-        public void Create()
+        public MovieRepository() 
         {
-            movieRepo.Add(new Movie());
+            datahandler.LoadMovies();
+        }
+
+        public void Create(Movie movie)
+        {
+            movieRepo.Add(movie);
         }
         //public void Read(){}
         //public void Update(){}
-        public void Delete()
+        public void Delete(int pos)
         {
-            movieRepo.RemoveAt(0);
+            movieRepo.RemoveAt(pos);
         }
     }
 }
