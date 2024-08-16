@@ -48,7 +48,8 @@
                    Foreground="#FFFFFF"
                    FontFamily="Times New Roman" />
 
-        <Button Content="Opret Film"
+        <Button x:Name="btnMovies"
+                Content="Opret Film"
                 Margin="570,280,570,351"
                 BorderThickness="0"
                 Background="LightBlue"
@@ -58,7 +59,7 @@
                 Padding="-4,1,1,1"
                 Width="160"
                 Height="70"
-                Click="OpretFilm_Click" />
+                Click="btnMovies_Click" />
 
 
     </Grid>

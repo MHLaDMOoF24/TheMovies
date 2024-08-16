@@ -23,7 +23,7 @@ namespace TheMovies._1View
         {
             InitializeComponent();
         }
-        private void OpretFilm_Click(object sender, RoutedEventArgs e)
+        private void btnMovies_Click(object sender, RoutedEventArgs e)
         {
             // Instantiate the CreateDiscount window
             Movies movies = new Movies();
