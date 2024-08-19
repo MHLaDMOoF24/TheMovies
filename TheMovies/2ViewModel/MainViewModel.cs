@@ -12,11 +12,13 @@ namespace TheMovies._2ViewModel
     {
         private Datahandler datahandler = new Datahandler();
 
-        private MovieRepository movieRepo = new MovieRepository();
-        public ObservableCollection<MovieViewModel> Movies { get; set; } = new ObservableCollection<MovieViewModel>();
+        private MovieRepository movieRepo;
+        public ObservableCollection<MovieViewModel> Movies { get; } = new ObservableCollection<MovieViewModel>();
 
         public MainViewModel()
         {
+            // Start repo connection and load movies from it
+            movieRepo = new MovieRepository();
             GetMovies();
         }
 
@@ -44,7 +46,15 @@ namespace TheMovies._2ViewModel
 
         public void GetMovies()
         {
-            // Read the ToString() from Model layer movies
+            // Read Model layer movies to ViewModel movies
+            foreach (Movie movie in movieRepo.movieRepo)
+            {
+                // Read each movie, then split up the information
+                string[] input = movie.ToString().Split(",");
+                // Add previous information to a new movie
+                if (input.Length == 3) 
+                    Movies.Add(new MovieViewModel(input[0], input[1], input[2]));
+            }
         }
     }
 }

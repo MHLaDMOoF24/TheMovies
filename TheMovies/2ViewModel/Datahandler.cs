@@ -17,8 +17,8 @@ namespace TheMovies._2ViewModel
         internal Datahandler()
         {   // Temporary setters for now, expand later?
             // Also set these to actual things!
-            filePath = string.Empty;
-            fileName = string.Empty;
+            filePath = Directory.GetCurrentDirectory();
+            fileName = "movies.csv";
         }
 
         // Currently specific to MainViewModel
@@ -50,8 +50,9 @@ namespace TheMovies._2ViewModel
                 {
                     while (!sr.EndOfStream) 
                     {
-                        string value;
+                        string[] line = sr.ReadLine().Split(";");
 
+                        movies.Add(new Movie(line[0], line[1], line[2]));
                     }
                 }
                 return movies;

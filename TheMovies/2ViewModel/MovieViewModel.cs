@@ -28,14 +28,14 @@ namespace TheMovies._2ViewModel
                 }
             }
         }
-        public TimeSpan Duration
+        public string Duration
         { 
-            get { return _duration; }
+            get { return _duration.ToString(@"hh\:mm"); }
             set
             {
-                if (_duration != value)
+                if (_duration.ToString(@"hh\:mm") != value)
                 {
-                    _duration = value;
+                    _duration = TimeSpan.Parse(value);
                     OnPropertyChanged(nameof(Duration));
                 }
             }
@@ -56,7 +56,7 @@ namespace TheMovies._2ViewModel
         public MovieViewModel(string title, string duration, string genre)
         {
             Title = title;
-            Duration = TimeSpan.Parse(duration);
+            Duration = duration;
             Genre = genre;
         }
 
@@ -64,7 +64,7 @@ namespace TheMovies._2ViewModel
 
         public override string ToString()
         {
-            return $"{Title},{Duration.ToString()},{Genre}";
+            return $"{Title};{Duration};{Genre}";
         }
 
 

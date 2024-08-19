@@ -20,7 +20,7 @@ namespace TheMovies._1View
     /// </summary>
     public partial class MoviesWindow : Window
     {
-        MovieViewModel movie;
+        MovieViewModel movieVM;
         MainViewModel mainVM;
 
         public MoviesWindow(MainViewModel mainViewModel)
@@ -49,6 +49,17 @@ namespace TheMovies._1View
         private void tbTitle_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void btnCloseWindow_Click(object sender, RoutedEventArgs e)
+        {
+            // Resets selection to avoid an error
+            dgMovies.SelectedIndex = 0;
+
+            // Save movies to file
+            mainVM.SaveMovies();
+
+            Close();
         }
     }
 }

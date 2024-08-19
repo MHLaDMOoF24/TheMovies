@@ -30,6 +30,14 @@
                 VerticalAlignment="Top"
                 Grid.Row="1" Click="btnDeleteMovie_Click" />
 
+        <Button x:Name="btnCloseWindow" Content="Tilbage"
+                Height="40"
+                Width="100"
+                Margin="20,200,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Grid.Row="1" Click="btnCloseWindow_Click" />
+
         <DataGrid x:Name="dgMovies"
                   ItemsSource="{Binding Movies}"
                   SelectedItem="{Binding SelectedMovie, Mode=TwoWay}"
@@ -40,13 +48,13 @@
                   SelectionChanged="dgMovies_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Titel"
-                                    Width="160"
+                                    Width="240"
                                     Binding="{Binding Title}" />
                 <DataGridTextColumn Header="Varighed"
                                     Width="60"
                                     Binding="{Binding Duration}" />
                 <DataGridTextColumn Header="Genre"
-                                    Width="80"
+                                    Width="100"
                                     Binding="{Binding Genre}" />
             </DataGrid.Columns>
         </DataGrid>

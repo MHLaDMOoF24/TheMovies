@@ -29,20 +29,15 @@ namespace TheMovies._1View
         {
             InitializeComponent();
 
+            // Initial datacontext creation
             mainVM = new MainViewModel();
         }
         private void btnMovies_Click(object sender, RoutedEventArgs e)
         {
+
+            // Give window datacontext and open
             moviesWindow = new MoviesWindow(mainVM);
             moviesWindow.Show();
-            //// Instantiate the CreateDiscount window
-            //Movies movies = new Movies();
-
-            //// Shows the desired window
-            //movies.Show();
-
-            //// Closes the current window (MainWindow)
-            //this.Close();
         }
     }
 }

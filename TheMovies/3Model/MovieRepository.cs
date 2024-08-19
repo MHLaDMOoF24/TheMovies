@@ -12,11 +12,12 @@ namespace TheMovies._3Model
     {
         private Datahandler datahandler = new Datahandler();
 
-        public List<Movie> movieRepo = new List<Movie>();
+        public List<Movie> movieRepo;
 
         public MovieRepository() 
         {
-            datahandler.LoadMovies();
+            // Load movies on launch
+            movieRepo = new List<Movie>(datahandler.LoadMovies());
         }
 
         public void Create(Movie movie)
