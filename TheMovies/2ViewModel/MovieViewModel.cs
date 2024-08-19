@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using TheMovies._1View;
-using TheMovies._3Model;
 
 namespace TheMovies._2ViewModel
 {
@@ -25,7 +24,7 @@ namespace TheMovies._2ViewModel
                 if (_title != value)
                 {
                     _title = value;
-                    OnPropertyChanged(nameof(Genre));
+                    OnPropertyChanged(nameof(Title));
                 }
             }
         }

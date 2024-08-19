@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TheMovies._1View"
+        xmlns:local="clr-namespace:TheMovies._1View" 
         mc:Ignorable="d"
         Title="MoviesWindow"
         Height="450"
@@ -15,13 +15,19 @@
         </Grid.RowDefinitions>
 
         <Button x:Name="btnCreateMovie" Content="Opret Film"
+                Height="40"
                 Width="100"
-                Margin="55,347,645,27"
+                Margin="20,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Grid.Row="1" Click="btnCreateMovie_Click" />
 
         <Button x:Name="btnDeleteMovie" Content="Slet Film"
+                Height="40"
                 Width="100"
-                Margin="200,347,500,27"
+                Margin="20,80,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
                 Grid.Row="1" Click="btnDeleteMovie_Click" />
 
         <DataGrid x:Name="dgMovies"
@@ -30,7 +36,7 @@
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   AutoGenerateColumns="False"
                   Grid.Row="1"
-                  Margin="400,0,0,0"
+                  Margin="140,0,0,0"
                   SelectionChanged="dgMovies_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Titel"
@@ -44,11 +50,5 @@
                                     Binding="{Binding Genre}" />
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox x:Name="tbTitle" 
-                 Text="{Binding SelectedMovie.Title, UpdateSourceTrigger=LostFocus, Mode=TwoWay}"
-                 TextChanged="tbTitle_TextChanged"
-                 HorizontalAlignment="Left" Margin="10,50,0,0" Grid.Row="1" TextWrapping="Wrap" 
-                 VerticalAlignment="Top" Width="340"/>
-        <Label Content="Titel" HorizontalAlignment="Left" Margin="10,24,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>

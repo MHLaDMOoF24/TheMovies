@@ -13,7 +13,7 @@ namespace TheMovies._2ViewModel
         private Datahandler datahandler = new Datahandler();
 
         private MovieRepository movieRepo = new MovieRepository();
-        public ObservableCollection<MovieViewModel> Movies = new ObservableCollection<MovieViewModel>();
+        public ObservableCollection<MovieViewModel> Movies { get; set; } = new ObservableCollection<MovieViewModel>();
 
         public MainViewModel()
         {
@@ -24,7 +24,7 @@ namespace TheMovies._2ViewModel
 
         public void NewMovie()
         {
-            Movies.Add(new MovieViewModel("-","00:00","-"));
+            Movies.Add(new MovieViewModel("","00:00",""));
         }
 
         public void DeleteMovie(int pos)
