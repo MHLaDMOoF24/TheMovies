@@ -22,13 +22,13 @@ namespace TheMovies._2ViewModel
         }
 
         // Currently specific to MainViewModel
-        public void SaveMovies(ObservableCollection<MovieViewModel> movies)
+        public void SaveMovies(List<Movie> movies)
         {
             using (StreamWriter sw = new StreamWriter(Path.Combine(filePath, fileName), false))
             {
                 try
                 {
-                    foreach (MovieViewModel movie in movies)
+                    foreach (Movie movie in movies)
                     {
                         sw.WriteLine(movie.ToString());
                     }

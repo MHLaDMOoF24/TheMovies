@@ -8,9 +8,10 @@ namespace TheMovies._3Model
 {
     internal interface IRepo<T>
     {
-        void Create(T obj);
-        //void Read();
-        //void Update();
-        void Delete(int pos);
+        // CRUD implementations, OBS Read?
+        public void Create(T obj);
+        public List<T> Read();
+        public void Update(List<T> list);
+        public void Delete(int pos);
     }
 }

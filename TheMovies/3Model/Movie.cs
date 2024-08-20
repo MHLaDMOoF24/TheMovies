@@ -31,13 +31,15 @@ namespace TheMovies._3Model
         public Movie(string title, string duration, string genre)
         {
             Title = title;
+            // Parse from string to allow semi-imperfect input, can be expanded greatly
             Duration = TimeSpan.Parse(duration);
             Genre = genre;
         }
 
         public override string ToString()
         {
-            return $"{Title},{Duration.ToString()},{Genre}";
+            // Using ; for CSV file formatting
+            return $"{Title};{Duration.ToString()};{Genre}";
         }
     }
 }
