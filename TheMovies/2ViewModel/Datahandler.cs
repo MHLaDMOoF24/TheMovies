@@ -48,7 +48,7 @@ namespace TheMovies._2ViewModel
                 List<Movie> movies = new List<Movie>();
                 using (StreamReader sr = new StreamReader(Path.Combine(filePath, fileName)))
                 {
-                    while (!sr.EndOfStream) 
+                    while (!sr.EndOfStream)
                     {
                         string[] line = sr.ReadLine().Split(";");
 
@@ -58,7 +58,7 @@ namespace TheMovies._2ViewModel
                 return movies;
             }
             else
-                return null;
+                return new List<Movie>();
         }
     }
 }
