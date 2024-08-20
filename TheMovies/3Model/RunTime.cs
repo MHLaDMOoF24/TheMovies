@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    class RunTime
+    public class RunTime
     {
+        public DateOnly Date;
+        public TimeOnly Time;
+
     }
 }

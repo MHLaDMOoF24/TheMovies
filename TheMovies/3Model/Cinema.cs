@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    class Cinema
+    public class Cinema
     {
+        public string Location;
     }
 }

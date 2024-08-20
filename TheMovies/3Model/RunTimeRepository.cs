@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    class RunTimeRepository
+    public class RunTimeRepository /*: IRepo<Movie>*/
     {
+        public RunTime RunTimeRepo;
     }
 }

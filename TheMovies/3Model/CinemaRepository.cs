@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    class CinemaRepository
+    public class CinemaRepository : IRepo<Movie>
     {
+        public Cinema cinemaRepo;
+
     }
 }

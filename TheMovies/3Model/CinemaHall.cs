@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    class Hall
+    public class Hall
     {
+        public int HallId;
     }
 }

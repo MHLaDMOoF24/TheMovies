@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TheMovies._3Model
 {
-    class AdditionalTime
+    public class AdditionalTime
     {
+        public TimeSpan Ads;
+        public TimeSpan Cleaning;
     }
 }
