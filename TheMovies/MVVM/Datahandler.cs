@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-using System.IO;
+﻿using System.IO;
 using TheMovies._3Model;
 
-namespace TheMovies._2ViewModel
+namespace TheMovies.MVVM
 {
     internal class Datahandler
     {
