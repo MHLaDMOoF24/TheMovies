@@ -6,8 +6,20 @@ namespace TheMovies._2ViewModel
 {
     internal class MovieViewModel : ViewModelBase
     {
-        public ObservableCollection<Movie> Movies { get; set; }
         private Datahandler _datahandler = new Datahandler();
+
+        public ObservableCollection<Movie> Movies { get; set; }
+
+        private Movie _selectedMovie;
+        public Movie SelectedMovie
+        {
+            get { return _selectedMovie; }
+            set
+            {
+                _selectedMovie = value;
+                OnPropertyChanged();
+            }
+        }
 
         // Relay commands for binding
         public RelayCommand AddCommand => new RelayCommand(execute => AddItem());
@@ -18,17 +30,6 @@ namespace TheMovies._2ViewModel
         {
             // Read mainVM information into workspace collection
             Movies = new ObservableCollection<Movie>(mainVM.movieRepo.Read());
-        }
-
-        private Movie _selectedMovie;
-        public Movie SelectedMovie
-        {
-            get { return _selectedMovie; }
-            set 
-            {
-                _selectedMovie = value; 
-                OnPropertyChanged();
-            }
         }
 
         // Methods that commands execute
