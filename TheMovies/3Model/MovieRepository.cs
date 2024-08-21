@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -20,12 +21,18 @@ namespace TheMovies._3Model
             movieRepo = new List<Movie>(datahandler.LoadMovies());
         }
 
-        public void Create(Movie movie)
+        public void Create(Movie newMovie)
         {
-            movieRepo.Add(movie);
+            movieRepo.Add(newMovie);
         }
-        //public void Read(){}
-        //public void Update(){}
+        public List<Movie> Read()
+        {
+            return movieRepo;
+        }
+        public void Update(List<Movie> newMovies)
+        {
+            movieRepo = newMovies;
+        }
         public void Delete(int pos)
         {
             movieRepo.RemoveAt(pos);

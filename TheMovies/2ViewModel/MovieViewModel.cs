@@ -1,84 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using TheMovies._1View;
+﻿using System.Collections.ObjectModel;
+using TheMovies._3Model;
+using TheMovies.MVVM;
 
 namespace TheMovies._2ViewModel
 {
-    public class MovieViewModel : INotifyPropertyChanged
+    internal class MovieViewModel : ViewModelBase
     {
-        private string _title;
-        private TimeSpan _duration;
-        private string _genre;
+        private Datahandler _datahandler = new Datahandler();
 
-        public string Title
-        { 
-            get { return _title; }
+        public ObservableCollection<Movie> Movies { get; set; }
+
+        private Movie _selectedMovie;
+        public Movie SelectedMovie
+        {
+            get { return _selectedMovie; }
             set
             {
-                if (_title != value)
-                {
-                    _title = value;
-                    OnPropertyChanged(nameof(Title));
-                }
-            }
-        }
-        public string Duration
-        { 
-            get { return _duration.ToString(@"hh\:mm"); }
-            set
-            {
-                if (_duration.ToString(@"hh\:mm") != value)
-                {
-                    _duration = TimeSpan.Parse(value);
-                    OnPropertyChanged(nameof(Duration));
-                }
-            }
-        }
-        public string Genre
-        { 
-            get { return _genre; }
-            set
-            {
-                if (_genre != value)
-                {
-                    _genre = value;
-                    OnPropertyChanged(nameof(Genre));
-                }
+                _selectedMovie = value;
+                OnPropertyChanged();
             }
         }
 
-        public MovieViewModel(string title, string duration, string genre)
+        // Relay commands for binding
+        public RelayCommand AddCommand => new RelayCommand(execute => AddItem());
+        public RelayCommand DeleteCommand => new RelayCommand(execute => DeleteItem(), canExecute => SelectedMovie != null);
+        public RelayCommand SaveCommand => new RelayCommand(execute => Save(), canExecute => CanSave());
+
+        public MovieViewModel(MainViewModel mainVM)
         {
-            Title = title;
-            Duration = duration;
-            Genre = genre;
+            // Read mainVM information into workspace collection
+            Movies = new ObservableCollection<Movie>(mainVM.movieRepo.Read());
         }
 
-
-
-        public override string ToString()
+        // Methods that commands execute
+        private void AddItem()
         {
-            return $"{Title};{Duration};{Genre}";
+            Movies.Add(new Movie("", "00:00", ""));
         }
 
-
-
-        // INotifyPropertyChanged handler
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+        private void DeleteItem()
         {
-            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            Movies.Remove(SelectedMovie);
         }
 
+        private void Save()
+        {
+            _datahandler.SaveMovies(Movies.ToList());
+        }
+
+        private bool CanSave()
+        {
+            return true;
+        }
     }
 }

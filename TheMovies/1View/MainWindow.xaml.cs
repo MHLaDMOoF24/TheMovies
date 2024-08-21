@@ -20,7 +20,6 @@ namespace TheMovies._1View
     /// </summary>
     public partial class MainWindow : Window
     {
-
         MainViewModel mainVM;
 
         MoviesWindow moviesWindow;
@@ -34,10 +33,11 @@ namespace TheMovies._1View
         }
         private void btnMovies_Click(object sender, RoutedEventArgs e)
         {
-
-            // Give window datacontext and open
+            // Give window datacontext and open as dialog
             moviesWindow = new MoviesWindow(mainVM);
-            moviesWindow.Show();
+            moviesWindow.ShowDialog();
+            // Once window is closed, update movieRepo with new information
+            mainVM.movieRepo.Update(moviesWindow.movieVM.Movies.ToList());
         }
     }
 }

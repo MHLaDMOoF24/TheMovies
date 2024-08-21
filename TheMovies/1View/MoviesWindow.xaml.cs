@@ -20,15 +20,16 @@ namespace TheMovies._1View
     /// </summary>
     public partial class MoviesWindow : Window
     {
-        MovieViewModel movieVM;
-        MainViewModel mainVM;
+        internal MovieViewModel movieVM;
 
-        public MoviesWindow(MainViewModel mainViewModel)
+        public MoviesWindow(MainViewModel mainVM)
         {
             InitializeComponent();
 
-            this.mainVM = mainViewModel;
-            DataContext = this.mainVM;
+            // Grab information from Main
+            movieVM = new MovieViewModel(mainVM);
+
+            DataContext = movieVM;
         }
 
         private void dgMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -38,28 +39,17 @@ namespace TheMovies._1View
 
         private void btnCreateMovie_Click(object sender, RoutedEventArgs e)
         {
-            mainVM.NewMovie();
+
         }
 
         private void btnDeleteMovie_Click(object sender, RoutedEventArgs e)
         {
-            mainVM.DeleteMovie(dgMovies.SelectedIndex);
-        }
-
-        private void tbTitle_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
         }
 
-        private void btnCloseWindow_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            // Resets selection to avoid an error
-            dgMovies.SelectedIndex = 0;
 
-            // Save movies to file
-            mainVM.SaveMovies();
-
-            Close();
         }
     }
 }
