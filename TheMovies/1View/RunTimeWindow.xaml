@@ -7,6 +7,61 @@
         mc:Ignorable="d"
         Title="RunTimeWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="10,10,0,0">
+            <Label Content="Lokation" />
+            <ComboBox Width="150"
+                      Height="25"
+                      Margin="0,5,0,20" />
+
+            <Label Content="Sal" />
+            <ComboBox Width="150"
+                      Height="25"
+                      Margin="0,5,0,20" />
+
+            <Label Content="Dato" />
+            <ComboBox Width="150"
+                      Height="25" />
+        </StackPanel>
         
+        <DataGrid Grid.Row="0"
+                  Grid.Column="1"
+                  Grid.RowSpan="2"
+                  Margin="10"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Spilletid"
+                                    Binding="{Binding Spilletid}"
+                                    Width="100" />
+                <DataGridTextColumn Header="Titel"
+                                    Binding="{Binding Titel}"
+                                    Width="*" />
+                <DataGridTextColumn Header="Varighed"
+                                    Binding="{Binding Varighed}"
+                                    Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--Mangler at ændre knappen, da jeg var usikker på om du ville have det ligesom i wireframe eller ligesom på MovieWindow-->
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                Content="Tilbage"
+                Width="100"
+                Height="40"
+                Margin="10" />
     </Grid>
 </Window>

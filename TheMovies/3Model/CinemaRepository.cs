@@ -6,9 +6,14 @@ namespace TheMovies._3Model
     {
         public Cinema cinemaRepo;
 
+        private List<Cinema> cinemas;
         public CinemaRepository() 
         {
-
+            cinemas = new List<Cinema>
+             {
+                new Cinema("Cinema 1"),
+                new Cinema("Cinema 2")
+             };
         }
 
         public void Create(Cinema obj)

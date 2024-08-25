@@ -8,6 +8,18 @@ namespace TheMovies._3Model
 {
     public class Cinema
     {
-        public string Location;
+        public string Location { get; set; }
+        public List<CinemaHall> Halls { get; set; }
+
+        public Cinema(string location)
+        {
+            Location = location;
+            Halls = new List<CinemaHall>();
+        }
+
+        public override string ToString()
+        {
+            return Location;
+        }
     }
 }
