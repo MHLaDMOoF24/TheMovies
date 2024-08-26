@@ -8,20 +8,22 @@ namespace TheMovies._3Model
 {
     public class RunTime
     {
-        public DateOnly Date { get; set; }
-        public TimeOnly Time { get; set; }
-        public AdditionalTime AdditionalTime { get; set; }
+        private AdditionalTime _additionalTime = new AdditionalTime();
 
-        public RunTime(DateOnly date, TimeOnly time, AdditionalTime additionalTime)
+        public DateOnly Date { get; set; }
+        public TimeOnly TimeSlot { get; set; }
+        public TimeSpan AddedTime { get; }
+
+        public RunTime(DateOnly date, TimeOnly time)
         {
             Date = date;
-            Time = time;
-            AdditionalTime = additionalTime;
+            TimeSlot = time;
+            AddedTime = _additionalTime.GetAdditionalTime();
         }
 
         public override string ToString()
         {
-            return $"{Date} - {Time}";
+            return $"{Date};{TimeSlot}";
         }
     }
 }

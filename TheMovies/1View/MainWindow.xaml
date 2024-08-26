@@ -27,22 +27,22 @@
 
         <TextBlock x:Name="MainPage"
                    HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,60,0,0"
                    TextWrapping="Wrap"
                    Text="The Movies"
-                   VerticalAlignment="Top"
                    Width="504"
                    Height="120"
                    Background="#282D33"
                    FontSize="100"
                    Foreground="#6AB93A"
-                   FontFamily="Times New Roman"
-                   Margin="0,62,0,0" />
+                   FontFamily="Times New Roman" />
 
         <TextBlock HorizontalAlignment="Center"
-                   Margin="0,187,0,0"
+                   VerticalAlignment="Top"
+                   Margin="0,200,0,0"
                    TextWrapping="Wrap"
                    Text="Velkommen Movie Jens Peter i folkemunde"
-                   VerticalAlignment="Top"
                    Background="#282D33"
                    FontSize="30"
                    Foreground="#FFFFFF"
@@ -50,16 +50,18 @@
 
         <Button x:Name="btnMovies"
                 Content="Opret Film"
+                Click="btnMovies_Click"
+                HorizontalContentAlignment="Center"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
                 Margin="570,280,570,351"
                 BorderThickness="0"
                 Background="LightBlue"
                 BorderBrush="Transparent"
                 RenderTransformOrigin="0.5,0.67"
-                HorizontalContentAlignment="Center"
                 Padding="-4,1,1,1"
                 Width="160"
-                Height="70"
-                Click="btnMovies_Click" />
+                Height="70" />
 
 
     </Grid>

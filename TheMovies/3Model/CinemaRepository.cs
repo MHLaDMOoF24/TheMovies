@@ -4,15 +4,16 @@ namespace TheMovies._3Model
 {
     public class CinemaRepository : IRepo<Cinema>
     {
-        public Cinema cinemaRepo;
-
-        private List<Cinema> cinemas;
+        public List<Cinema> cinemaRepo;
         public CinemaRepository() 
         {
-            cinemas = new List<Cinema>
+            // Initalized internally for now, consider loading from file
+            cinemaRepo = new List<Cinema>
              {
-                new Cinema("Cinema 1"),
-                new Cinema("Cinema 2")
+                new Cinema("Hjerm", 4),
+                new Cinema("Videbaek", 3),
+                new Cinema("Thorsminde", 2),
+                new Cinema("Raehr", 3)
              };
         }
 

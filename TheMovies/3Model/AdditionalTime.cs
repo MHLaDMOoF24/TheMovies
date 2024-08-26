@@ -8,12 +8,13 @@ namespace TheMovies._3Model
 {
     public class AdditionalTime
     {
-        public TimeSpan Ads { get; set; }
-        public TimeSpan Cleaning { get; set; }
-        public AdditionalTime(TimeSpan ads, TimeSpan cleaning)
+        // Ads and cleaning individually has specifically 15 minutes each. Enum?
+        private TimeSpan Ads { get; } = new TimeSpan(0, 15, 0);
+        private TimeSpan Cleaning { get; } = new TimeSpan(0, 15, 0);
+
+        public TimeSpan GetAdditionalTime()
         {
-            Ads = ads;
-            Cleaning = cleaning;
+            return Ads + Cleaning;
         }
     }
 }

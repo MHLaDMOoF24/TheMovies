@@ -16,6 +16,8 @@ namespace TheMovies._3Model
             CinemaHallID = cinemaHallID;
         }
 
+        
+
         public override string ToString()
         {
             return $"Hall {CinemaHallID}";
