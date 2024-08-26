@@ -1,7 +1,6 @@
 ﻿using System.IO;
-using TheMovies._3Model;
 
-namespace TheMovies.MVVM
+namespace TheMovies._3Model
 {
     internal class Datahandler
     {

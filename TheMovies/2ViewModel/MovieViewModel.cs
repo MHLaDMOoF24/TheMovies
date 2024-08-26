@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using TheMovies._3Model;
-using TheMovies.MVVM;
 
 namespace TheMovies._2ViewModel
 {
