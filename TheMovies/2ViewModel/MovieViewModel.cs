@@ -26,7 +26,6 @@ namespace TheMovies._2ViewModel
         public RelayCommand DeleteCommand => new RelayCommand(execute => DeleteItem(), canExecute => SelectedMovie != null);
         public RelayCommand SaveCommand => new RelayCommand(execute => Save(), canExecute => CanSave());
 
-        //public MovieViewModel() { }
         public MovieViewModel(MainViewModel mainVM)
         {
             // Read mainVM information into workspace collection

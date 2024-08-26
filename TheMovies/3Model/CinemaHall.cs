@@ -9,18 +9,24 @@ namespace TheMovies._3Model
 {
     public class CinemaHall
     {
-        public int CinemaHallID { get; set; }
+        private int _cinemaHallID;
+
+        public int CinemaHallID
+        {
+            get { return _cinemaHallID; }
+        }
+
 
         public CinemaHall(int cinemaHallID)
         {
-            CinemaHallID = cinemaHallID;
+            _cinemaHallID = cinemaHallID;
         }
 
         
 
         public override string ToString()
         {
-            return $"Hall {CinemaHallID}";
+            return $"Sal {CinemaHallID}";
         }
     }
 

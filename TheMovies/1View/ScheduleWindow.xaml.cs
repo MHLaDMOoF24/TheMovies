@@ -17,11 +17,16 @@ namespace TheMovies._1View
     /// <summary>
     /// Interaction logic for RunTimeWindow.xaml
     /// </summary>
-    public partial class RunTimeWindow : Window
+    public partial class ScheduleWindow : Window
     {
-        public RunTimeWindow()
+        public ScheduleWindow()
         {
             InitializeComponent();
+        }
+
+        private void dgSchedule_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
